@@ -46,7 +46,6 @@ params.put("singleNo","MN20160718042759177");
 params.put("source","1");
 params.put("h5Url", " ");
 goopalPay.goopalPay(params);
-![Alt text](./1478578602793.png)
 ```
 
 ## 2. 集成流程
