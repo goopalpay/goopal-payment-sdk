@@ -11,7 +11,7 @@ GoopalPayTask goopalPayTask = new GoopalPayTask(activity);
 HashMap<String,String> params=new HashMap<String, String>();
 goopalPay.goopalPay(params);
 ```
-
+<br></br>
 **参数说明：**
 
 | 参数名      | 参数类型 | 参数说明  |
@@ -19,7 +19,7 @@ goopalPay.goopalPay(params);
 | params  | HashMap<String,String>| 订单支付的参数，详见下面params列表 |
 
 
-
+<br></br>
 **params列表：** 
 
 | 名称  | 说明 | 类型  |备注 |
@@ -35,6 +35,7 @@ goopalPay.goopalPay(params);
 
 `说明：以上参数不能为null`
 
+<br></br>
 **参数示例：**
 ```java
 params.put("merchantId ","2112345713904416");
@@ -47,16 +48,16 @@ params.put("source","1");
 params.put("h5Url", " ");
 goopalPay.goopalPay(params);
 ```
-
+<br></br>
 ## 2. 集成流程
 ### 2.1 导入开发资源
 第一步：将goopalpay-sdk-v1.jar包放入商户应用工程的libs目录下。
-![Alt text](./1478578696866.png)
+![Alt text](https://github.com/smilce/Interview-topic/blob/master/images/android1.png)
 
 第二步：在Android studio 中右键点击该jar文件选择 add as Library…导入工程目录
-![Alt text](./1478583083535.png)
+![Alt text](https://github.com/smilce/Interview-topic/blob/master/images/Android2.png)
 
-
+<br></br>
 ### 2.2 修改Manifest
 在商户应用工程的AndroidManifest.xml文件里面添加声明：
 ``` java
@@ -75,6 +76,7 @@ goopalPay.goopalPay(params);
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
+<br></br>
 ### 2.3 添加混淆规则
 Android studio中在工程的混淆规则文件中添加
 ```java
