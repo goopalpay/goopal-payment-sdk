@@ -67,7 +67,6 @@ goopalPay.goopalPay(params);
     android:screenOrientation="behind"
     android:windowSoftInputMode="adjustResize|stateHidden" >
 </activity>
-![Alt text](./1478578803787.png)
 ```
 
 和权限声明：
