@@ -30,7 +30,6 @@ goopalPay.goopalPay(params);
 | gopOrderNo| 果付订单号| String 
 | orderDate| 下单时间| String 
 | singleNo| 唯一标识码| String 
-| source| 支付类型| String |取下单时返回的source字段值|
 | h5Url| H5收银台URL| String |取下单时返回的h5Url字段值|
 
 `说明：以上参数不能为null`
@@ -44,7 +43,6 @@ params.put("orderNo ","MN20160718042759177");
 params.put("gopOrderNo ","201607184275923400024");
 params.put("orderDate ","20160718042759");
 params.put("singleNo","MN20160718042759177");
-params.put("source","1");
 params.put("h5Url", " ");
 goopalPay.goopalPay(params);
 ```
