@@ -27,10 +27,10 @@ SDK导入到您的项目中，步骤如下：
 ### 3.1导入SDK
 将SDK文件中包含的 `goopalpay-sdk-v1.a`，`GoopalPayApi.h`，`GoopalPayObject.h` 三个文件添加到你所建的工程中（如下图所示，建立了一个名为`textPay` 的工程，并把以上三个文件添加到`testPay`文件夹下）。
 ![Alt text](https://github.com/smilce/Interview-topic/blob/master/images/ios1.png)
-<br></br>
+
 在你需要使用的控制器导入头文件`GoopalPayApi.h`。
 
-<br></br>
+<br>
 ### 3.2使用goopalpay-sdk-v1.a
 > 在文件导入和编译成功以后，开始使用果仁支付。在你需要的控制器中，导入头文件#import "GoopalPayApi.h"。在获取商品信息后，传入参数，参数格式必须严格要求。
 
@@ -46,7 +46,6 @@ reqs.singleNo= data[@"singleNo"];
 reqs.appId= data[@"appId"];
 reqs.h5Url = data[@"h5Url"];
 reqs.orderDate= data[@"orderDate"]; 
-reqs.source = data[@"source"];
 ```
 
 **参数内容如下：（所有参数不能为nil）**
@@ -58,7 +57,6 @@ reqs.source = data[@"source"];
 | merchantId| 商户ID| String ||
 | singleNo| 唯一标识码| String ||
 | appId | 应用程序的ID | String ||
-| source| 支付方式| String |1表示APP，2表示H5|
 | h5Url| H5收银台URL| String |下单时返回的h5Url字段值|
 | orderDate| 下单时间| String ||
 
