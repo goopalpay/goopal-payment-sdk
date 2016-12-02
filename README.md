@@ -60,6 +60,8 @@
 3）用商户的私钥对待签名串做签名操作，签名时算法选择MD5。具体做法为将商户的秘钥与待签名串拼接在一起（秘钥在前)，并使用相应的`charset`进行编码，计算编码后的数据`MD5`摘要作为签名;<br>
 4）将签名后的签名串放在表单域里和其他表单域一起通过`HTTP Post`的方式传输给果付系统平台。<br>
 
+当使用MD5进行签名时，将商户的秘钥与待签名串拼接在一起（秘钥在前），并使用相应的`charset`进行编码，在进行计算MD5摘要。注意`charset`同样会作为参数出现在表单中。<br>
+
 以商户标准接口为例<br>
 接口中的请求参数将包含`merchantId`，`service`，`version`, `requestTime`, `charset`, `signType`, `bizConten`，`sign`字段。<br>
 
@@ -130,10 +132,13 @@ bizContent=biz_content&charset=UTF-8&merchantId=21112345678&requestTime=2016-10-
 | 返回业务数据 | data |String|必填|具体的业务响应数据，json格式|
 <br>
 请求实例：
+``` java
 POST https://pay.goopal.com.cn/gateway
 merchantId=`2111234567890832&service=order.create&version=1.0&`
 requestTime=`2016-10-14+14%3A01%3A42&charset=UTF-8&signType=NON_SIGN&sign=B3DB73CD8CFC3C6E0671FAAAEE1B049&`
 bizContent=`specfic_order_create_content`
+
+```
 <br>
 响应实例：
 ``` java
@@ -306,7 +311,7 @@ bizContent=`specfic_order_create_content`
 
 <br>
 ###2.7 商户通知接口
-> 当订单上发生某些事件时，将会通知商户。商户通过设置下单时的notifyUrl字段来指定接收通知的地址。
+> 当订单上发生某些事件时，将会通知商户。商户通过设置下单时的`notifyUrl`字段来指定接收通知的地址。
 
 <br>
 #### 2.7.1 通知类型
@@ -349,6 +354,13 @@ merchantId=2111234567890832&notifyToken= 5d41402abc4b2a76b9719d911017c592&notify
 
 | 名称  | 字段名称 | 数据类型 | 属性 | 备注 | 
 | :---  |:-------|:-------|:--------|:--------|
+| 通知类型  | notifyType|String|必填|TRADE_SUCCESS|
+| 通知内容 | notifyContent|String|必填|参考通知内容字段|
+
+通用内容字段
+
+| 名称  | 字段名称 | 数据类型 | 属性 | 备注 | 
+| :---  |:-------|:-------|:--------|:--------|
 | 通知类型  | notifyType|String|必填| |
 | 通知内容 | notifyContent|String|必填| |
 | 商户ID  | merchantId|String|必填| |
@@ -370,8 +382,8 @@ merchantId=2111234567890832&notifyToken= 5d41402abc4b2a76b9719d911017c592&notify
 
 | 名称  | 字段名称 | 数据类型 | 属性 | 备注 | 
 | :---  |:-------|:-------|:--------|:--------|
-| 通知类型  | notifyType|String|必填| |
-| 通知内容 | notifyContent|String|必填| |
+| 通知类型  | notifyType|String|必填|REFUND_SUCCESS |
+| 通知内容 | notifyContent|String|必填|参考通知内容字段|
 
 <br>
 通用内容字段
