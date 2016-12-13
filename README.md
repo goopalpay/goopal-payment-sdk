@@ -368,7 +368,8 @@ SignScheme signScheme = new SignScheme(
       "source":1,
       "tradeCurrency":"CNY"},
   "msg":"成功"},
-"sign":"3F6CF7921334BE0708314E8A9F525F35"}
+"sign":"3F6CF7921334BE0708314E8A9F525F35"
+}
 ```
 
 <br>
@@ -509,7 +510,7 @@ java请求：
         "b0651984a70b5ffc3e2befad93c380d3"); // 秘钥
 
   GopPayClient client = new DefaultGopPayClient(
-        "http://172.16.33.8:9012/pay-trade/gateway", // 请求地址
+        "https://pay.guorenbao.com/pay-trade/gateway", // 请求地址
         "2111234567890832", // 商户号
         signScheme); // 签名方案
   GopPayRefundQueryRequest request = new GopPayRefundQueryRequest();
